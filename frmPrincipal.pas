@@ -12,6 +12,7 @@ type
   public
      function soma(a:Integer; b:Integer): Integer;
      function subtracao(a:Integer; b:Integer): Integer;
+     function divisao(a:double; b:Double):Double;
   end;
 
 var
@@ -23,6 +24,11 @@ implementation
 
 { TForm2 }
 
+function TForm2.divisao(a, b: Double): Double;
+begin
+  Result := a / b;
+end;
+
 function TForm2.soma(a, b: Integer): Integer;
 begin
   Result := a + b;
@@ -30,7 +36,7 @@ end;
 
 function TForm2.subtracao(a, b: Integer): Integer;
 begin
-  Result := a + b;
+  Result := a - b;
 end;
 
 end.

@@ -27,6 +27,7 @@ type
   published
     procedure Testsoma;
     procedure TestSubtracao;
+    procedure TestDivisao;
   end;
 
 implementation
@@ -41,6 +42,19 @@ begin
   FForm2 := nil;
 end;
 
+procedure TestTForm2.TestDivisao;
+var
+  x:double;
+  y:double;
+  z:double;
+begin
+  x := 10;
+  y := 3;
+  z := FForm2.divisao(x,y);
+
+  CheckEquals(3.33,z);
+end;
+
 procedure TestTForm2.Testsoma;
 var
   ReturnValue: Integer;
@@ -52,6 +66,7 @@ begin
   ReturnValue := FForm2.soma(a, b);
 
   CheckEquals(5,ReturnValue);
+    Status('FUNCIONOU SOMA');
 end;
 procedure TestTForm2.TestSubtracao;
 var
@@ -61,9 +76,10 @@ var
 begin
   a := 3;
   b := 2;
-  ReturnValue := FForm2.soma(a, b);
+  ReturnValue := FForm2.subtracao(a, b);
 
   CheckEquals(1,ReturnValue);
+  Status('FUNCIONOU SUBTRAÇÃO');
 end;
 initialization
   RegisterTest(TestTForm2.Suite);
